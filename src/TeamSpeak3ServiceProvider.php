@@ -1,6 +1,6 @@
 <?php
 
-namespace Adams\TeamSpeak3\Providers;
+namespace Adams\TeamSpeak3;
 
 use Adams\TeamSpeak3;
 use Illuminate\Support\ServiceProvider;
