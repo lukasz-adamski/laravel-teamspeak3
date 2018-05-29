@@ -59,6 +59,6 @@ final class TeamSpeak3ServiceProvider extends ServiceProvider
      */
     protected function configFilePath()
     {
-        return realpath(__DIR__ . '/../../config/teamspeak3.php');
+        return realpath(__DIR__ . '/../config/teamspeak3.php');
     }
 }
