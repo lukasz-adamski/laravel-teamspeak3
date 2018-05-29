@@ -1,0 +1,22 @@
+
+{
+    "name": "lukasz-adamski/laravel-teamspeak3",
+    "description": "Teamspeak 3 PHP Framework Service Provider for Laravel Framework",
+    "keywords": ["laravel", "teamspeak3", "ts3", "framework", "serverquery", "api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Łukasz Adamski"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "illuminate/support": "~5.0",
+        "lukasz-adamski/teamspeak3-framework": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Adams\\TeamSpeak3\\": "src/"
+        }
+    }
+}
