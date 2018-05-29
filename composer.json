@@ -14,7 +14,7 @@
     "require": {
         "php": ">=5.6.4",
         "illuminate/support": "~5.0",
-        "lukasz-adamski/teamspeak3-framework": "dev-master"
+        "lukasz-adamski/teamspeak3-framework": "~1.0"
     },
     "autoload": {
         "psr-4": {
