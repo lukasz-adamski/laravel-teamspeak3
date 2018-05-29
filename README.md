@@ -41,14 +41,15 @@ class TeamSpeak3Controller extends Controller
     /**
      * Show clients connected to TeamSpeak 3 server.
      *
-     * @param TeamSpeak3 $server
      * @return Response
      */
-    public function show(TeamSpeak3 $server)
+    public function clients()
     {
-        $clientList = $server->clientList();
+        $query = app()->make(TeamSpeak3::class);
 
-        return view('teamspeak3.clients', compact('clientList'));
+        return view('teamspeak3.clients', [
+            'clients' => $query->clientList()
+        ]);
     }
 }
 ```
