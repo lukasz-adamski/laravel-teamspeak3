@@ -8,6 +8,13 @@ use Illuminate\Support\ServiceProvider;
 final class TeamSpeak3ServiceProvider extends ServiceProvider
 {
     /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = true;
+    
+    /**
      * Bootstrap the application services.
      *
      * @return void
