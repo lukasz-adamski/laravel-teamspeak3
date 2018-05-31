@@ -37,7 +37,7 @@ final class TeamSpeak3ServiceProvider extends ServiceProvider
             $this->configFilePath(), 'teamspeak3'
         );
 
-        $this->app->singleton('teamspeak3', function ($app) {
+        $this->app->singleton(TeamSpeak3::class, function ($app) {
             $args = ['serverquery://%s:%s@%s:%d/?server_port=%d&nickname=%s'];
 
             foreach (['username', 'password', 'host', 'query_port', 'voice_port','nickname'] as $key)
@@ -56,7 +56,9 @@ final class TeamSpeak3ServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['teamspeak3'];
+        return [
+            TeamSpeak3::class
+        ];
     }
 
     /**
