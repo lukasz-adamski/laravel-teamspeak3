@@ -37,12 +37,19 @@ final class TeamSpeak3ServiceProvider extends ServiceProvider
             $this->configFilePath(), 'teamspeak3'
         );
 
-        $this->app->singleton(TeamSpeak3::class, function ($app) {
-            $args = ['serverquery://%s:%s@%s:%d/?server_port=%d&nickname=%s'];
+        $this->app->bind(TeamSpeak3::class,  function ($app) {
+            $uri = 'serverquery://%s:%s@%s:%d/?server_port=%d';
 
-            foreach (['username', 'password', 'host', 'query_port', 'voice_port','nickname'] as $key)
+            foreach (['username', 'password', 'host', 'query_port', 'voice_port'] as $key)
                 $args[] = rawurlencode(config('teamspeak3.' . $key));
                 
+            if (! is_null($nickname = config('teamspeak3.nickname'))) {
+                $uri .= '&nickname=%s';
+                $args[] = rawurlencode($nickname);
+            }
+
+            array_unshift($args, $uri);
+
             return TeamSpeak3::factory(
                 call_user_func_array('sprintf', $args)
             );

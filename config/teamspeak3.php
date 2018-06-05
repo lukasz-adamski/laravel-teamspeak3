@@ -22,6 +22,9 @@ return [
     | selected after successful connection and authorization. Every virtual 
     | server has its own voice port.
     |
+    | If this option will be set to null, no server will be selected
+    | after successful connection.
+    |
     | Default: 9987
     |
     */
@@ -67,8 +70,9 @@ return [
     |--------------------------------------------------------------------------
     |
     | This nickname will be used after successful connection to ServerQuery.
+    | When this option is set null, no nickname will be set after login.
     |
     */
-    'nickname' => env('TEAMSPEAK3_NICKNAME', 'John Doe')
+    'nickname' => env('TEAMSPEAK3_NICKNAME', null)
 
 ];
