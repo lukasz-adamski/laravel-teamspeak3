@@ -1,7 +1,6 @@
-
 <?php
 
-namespace \Adams\TeamSpeak3\Facades;
+namespace Adams\TeamSpeak3\Facades;
 
 use Adams\TeamSpeak3 as BaseTeamSpeak3;
 use Illuminate\Support\Facades\Facade as BaseFacade;
