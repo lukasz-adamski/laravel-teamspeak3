@@ -10,11 +10,15 @@ composer install lukasz-adamski/laravel-teamspeak3
 ```php
 Adams\TeamSpeak3\TeamSpeak3ServiceProvider::class,
 ```
-3. Publish configuration file to your project:
+3. Insert Facade in `config/app.php`:
+```php
+'TeamSpeak3' => Adams\TeamSpeak3\Facades\TeamSpeak3::class,
+```
+4. Publish configuration file to your project:
 ```
 php artisan vendor:publish --provider="Adams\TeamSpeak3\TeamSpeak3ServiceProvider"
 ```
-4. Open `.env` file and insert these settings:
+5. Open `.env` file and insert these settings:
 - `TEAMSPEAK3_HOST` - host used to establish connection with server,
 - `TEAMSPEAK3_VOICE_PORT` - voice port (UDP) used to identify virtual server to select,
 - `TEAMSPEAK3_QUERY_PORT` - query port (TCP) used to establish connection with ServerQuery,
@@ -29,7 +33,6 @@ For example you can use this Service Provider in Controllers:
 
 namespace App\Http\Controllers;
 
-use Adams\TeamSpeak3;
 use App\Http\Controllers\Controller;
 
 class TeamSpeak3Controller extends Controller
@@ -41,10 +44,8 @@ class TeamSpeak3Controller extends Controller
      */
     public function clients()
     {
-        $query = app()->make(TeamSpeak3::class);
-
         return view('teamspeak3.clients', [
-            'clients' => $query->clientList()
+            'clients' => TeamSpeak3::clientList()
         ]);
     }
 }
