@@ -4,7 +4,7 @@ This package is developed to provide Laravel Framework service allowing you to e
 ## Installation
 1. Install composer package using this command:
 ```
-composer install lukasz-adamski/laravel-teamspeak3
+composer require lukasz-adamski/laravel-teamspeak3
 ```
 2. Insert Service Provider in `config/app.php`:
 ```php
